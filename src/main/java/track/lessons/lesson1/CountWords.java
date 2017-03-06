@@ -22,6 +22,7 @@ import java.io.BufferedReader;
  * ******************************************************************************************
  *
  */
+
 public class CountWords {
 
     /**
@@ -36,7 +37,7 @@ public class CountWords {
         FileReader fr = new FileReader(file);
         BufferedReader br = new BufferedReader(fr);
         String line;
-        while( (line = br.readLine()) != null){
+        while ((line = br.readLine()) != null) {
             try {
                 int number = Integer.parseInt(line);
                 result += number;
@@ -62,7 +63,7 @@ public class CountWords {
         FileReader fr = new FileReader(file);
         BufferedReader br = new BufferedReader(fr);
         String line;
-        while( (line = br.readLine()) != null){
+        while ((line = br.readLine()) != null) {
             try {
                 Integer.parseInt(line);
             } catch (Exception e) {

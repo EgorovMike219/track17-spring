@@ -6,7 +6,7 @@ import java.util.NoSuchElementException;
  * Должен наследовать List
  * Односвязный список
  */
-public class MyLinkedList extends List {
+public class MyLinkedList extends List implements Stack {
 
     /**
      * private - используется для сокрытия этого класса от других.
@@ -27,21 +27,31 @@ public class MyLinkedList extends List {
     }
 
     @Override
-    void add(int item) {
+    public void add(int item) {
     }
 
     @Override
-    int remove(int idx) throws NoSuchElementException {
+    public int remove(int idx) throws NoSuchElementException {
         return 0;
     }
 
     @Override
-    int get(int idx) throws NoSuchElementException {
+    public int get(int idx) throws NoSuchElementException {
         return 0;
     }
 
     @Override
-    int size() {
+    public int size() {
         return 0;
     }
+
+    @Override
+    public void push(int value) {
+
+    } // положить значение наверх стека
+
+    @Override
+    public int pop() {
+        return 1;
+    } // вытащить верхнее значение со стека
 }

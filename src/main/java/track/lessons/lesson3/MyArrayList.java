@@ -11,6 +11,10 @@ import java.util.NoSuchElementException;
  */
 public class MyArrayList extends List {
 
+    private int capacity;
+    private int[] array;
+    final float factor = (float) 1.5;
+
     public MyArrayList() {
 
     }
@@ -34,8 +38,9 @@ public class MyArrayList extends List {
         return 0;
     }
 
-    @Override
-    int size() {
+    //@Override
+    /*int size() {
         return 0;
     }
+    */
 }

@@ -15,6 +15,7 @@ public abstract class List {
     /**
      * Добавить элемент в конец списка
      */
+
     abstract void add(int item);
 
     /**

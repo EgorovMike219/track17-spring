@@ -33,8 +33,8 @@ public class MyArrayList extends List {
             array[size] = item;
             size += 1;
         } else {
-            capacity *= factor;
-            int [] array1 = new int[capacity];
+            capacity = (int) (capacity * factor + 1);
+            int [] array1 = new int[2 * capacity];
             System.arraycopy(array,0, array1, 0, size);
             array = array1;
             array[size] = item;

@@ -31,20 +31,25 @@ public class MyLinkedList extends List implements Stack, Queue {
 
     public MyLinkedList() {
         size = 0;
-        begin = end = new Node(null, null, 0);
+        begin = end = null;
     }
 
     @Override
     public void add(int item) {
-        Node elem = new Node(end, null, item);
-        end.next = elem;
-        end = elem;
-        size += 1;
+        if (size == 0) {
+            begin = end = new Node(null, null, item);
+            size += 1;
+        } else {
+            Node elem = new Node(end, null, item);
+            end.next = elem;
+            end = elem;
+            size += 1;
+        }
     }
 
     @Override
     public int remove(int idx) throws NoSuchElementException {
-        if (idx < size) {
+        if (idx < size && size > 1 && idx >= 0) {
             if (idx == 0) {
                 size -= 1;
                 int result = begin.val;
@@ -71,14 +76,21 @@ public class MyLinkedList extends List implements Stack, Queue {
                 }
             }
         } else {
-            System.out.println(new NoSuchElementException().toString());
-            throw new NoSuchElementException();
+            if (size == 1 && idx == 0) {
+                size -= 1;
+                int result = end.val;
+                begin = end = null;
+                return result;
+            } else {
+                System.out.println(new NoSuchElementException().toString());
+                throw new NoSuchElementException();
+            }
         }
     }
 
     @Override
     public int get(int idx) throws NoSuchElementException {
-        if (idx < size) {
+        if (idx < size && idx >= 0) {
             Node elem = begin;
             for (int i = 0; i < idx; i += 1) {
                 elem = elem.next;
@@ -125,14 +137,10 @@ public class MyLinkedList extends List implements Stack, Queue {
 
     @Override
     public int dequeu() throws NoSuchElementException {
-        if (size > 0) {
-            size -= 1;
-            int result = end.val;
-            end.prev.next = null;
-            end = end.prev;
-            return result;
-        } else {
-            throw new NoSuchElementException();
+        try {
+            return pop();
+        } catch (NoSuchElementException e) {
+            throw e;
         }
     }
 }

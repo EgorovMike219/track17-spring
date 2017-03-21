@@ -1,10 +1,6 @@
 package track.lessons.lesson5generics;
 
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import track.util.Util;
 
@@ -24,7 +20,8 @@ public class Cypher {
                     ch += SYMBOL_DIST;
                 }
                 // Если это буква, то собираем частотную информацию
-
+                Integer oldValue = map.get(ch);
+                map.replace(ch, oldValue, oldValue + 1);
 
 
             }
@@ -47,8 +44,16 @@ public class Cypher {
      */
     public Map<Character, Integer> buildHist(String data) {
         Map<Character, Integer> map = readData(data);
-
-        return null;
+        ArrayList<Map.Entry<Character, Integer>> hist = new ArrayList<Map.Entry<Character, Integer>>();
+        for (Map.Entry<Character, Integer> entry : map.entrySet()) {
+            hist.add(entry);
+        }
+        hist.sort((Map.Entry<Character, Integer> o1, Map.Entry<Character, Integer> o2) -> o1.getValue() - o2.getValue());
+        Map<Character, Integer> map1 = new TreeMap<Character, Integer>();
+        for (Map.Entry<Character, Integer> entry : hist) {
+            map1.put(entry.getKey(), entry.getValue());
+        }
+        return map1;
     }
 
     /**

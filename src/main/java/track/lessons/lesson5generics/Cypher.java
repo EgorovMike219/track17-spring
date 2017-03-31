@@ -48,7 +48,8 @@ public class Cypher {
         for (Map.Entry<Character, Integer> entry : map.entrySet()) {
             hist.add(entry);
         }
-        hist.sort((Map.Entry<Character, Integer> o1, Map.Entry<Character, Integer> o2) -> o1.getValue() - o2.getValue());
+        hist.sort((Map.Entry<Character, Integer> o1, Map.Entry<Character,
+                Integer> o2) -> o1.getValue() - o2.getValue());
         Map<Character, Integer> map1 = new TreeMap<Character, Integer>();
         for (Map.Entry<Character, Integer> entry : hist) {
             map1.put(entry.getKey(), entry.getValue());

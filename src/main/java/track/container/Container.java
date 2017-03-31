@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.lang.reflect.Type;
+
 import track.container.config.Bean;
 import track.container.config.Property;
 import track.container.config.ValueType;
@@ -14,13 +15,14 @@ import track.container.config.ValueType;
  * Основной класс контейнера
  * У него определено 2 публичных метода, можете дописывать свои методы и конструкторы
  */
+
 public class  Container {
 
     private List<Bean> beans;
     private Map<String, Object> objByName;
     private Map<String, Object> objByClassName;
     // Реализуйте этот конструктор, используется в тестах!
-
+    
     public Container(List<Bean> beans) {
         this.beans = beans;
         objByName = new HashMap<String, Object>();

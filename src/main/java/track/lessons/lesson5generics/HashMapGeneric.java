@@ -1,7 +1,5 @@
 package track.lessons.lesson5generics;
 
-import java.util.List;
-
 /**
  *
  */
@@ -58,12 +56,6 @@ public class HashMapGeneric<K, V> {
             this.value = value;
             this.next = next;
         }
-    }
-
-    public static void main(String[] args) {
-        HashMapGeneric<Integer, String> map = new HashMapGeneric<>();
-
-        HashMapGeneric<String, List<Integer>> map2 = new HashMapGeneric<>();
     }
 
 }

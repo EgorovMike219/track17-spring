@@ -1,4 +1,4 @@
-package com.company;
+package track.lections;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -22,7 +22,7 @@ public class TCPEchoServer {
         int recvMsgSize;
         byte[] recieveBuf = new byte[BUFSIZE];
 
-        while(true) {
+        while (true) {
             Socket clntSock = serverSocket.accept();
 
             SocketAddress clientAddress = clntSock.getRemoteSocketAddress();
@@ -38,4 +38,5 @@ public class TCPEchoServer {
             clntSock.close();
         }
     }
+
 }

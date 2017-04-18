@@ -1,4 +1,4 @@
-package com.company;
+package track.lections;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -22,7 +22,7 @@ public class NIOExamples {
             System.out.println("Read " + bytesRead);
             buf.flip();
 
-            while(buf.hasRemaining()){
+            while (buf.hasRemaining()){
                 System.out.print((char) buf.get());
             }
 
@@ -44,7 +44,7 @@ public class NIOExamples {
 
             buf.flip();  //make buffer ready for read
 
-            while(buf.hasRemaining()){
+            while (buf.hasRemaining()){
                 System.out.print((char) buf.get()); // read 1 byte at a time
             }
 
